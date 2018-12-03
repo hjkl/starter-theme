@@ -9,6 +9,8 @@
  * @since    Timber 0.1
  */
 
+use Timber\Timber;
+
 $context = Timber::get_context();
 $post = Timber::query_post();
 $context['post'] = $post;

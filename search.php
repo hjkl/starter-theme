@@ -9,6 +9,9 @@
  * @since   Timber 0.1
  */
 
+use Timber\Timber;
+use Timber\PostQuery;
+
 $templates = array( 'search.twig', 'archive.twig', 'index.twig' );
 
 $context          = Timber::get_context();

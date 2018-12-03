@@ -1,5 +1,7 @@
 <?php
 
+    use Timber\Timber;
+
 	class TestTimberStarterTheme extends WP_UnitTestCase {
 
 		function setUp() {

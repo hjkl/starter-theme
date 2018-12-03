@@ -9,10 +9,13 @@
  * @since    Timber 0.1
  */
 
+use Timber\Timber;
+use Timber\PostQuery;
+
 global $wp_query;
 
 $context          = Timber::get_context();
-$context['posts'] = new Timber\PostQuery();
+$context['posts'] = new PostQuery();
 if ( isset( $wp_query->query_vars['author'] ) ) {
 	$author            = new Timber\User( $wp_query->query_vars['author'] );
 	$context['author'] = $author;
