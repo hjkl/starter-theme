@@ -12,6 +12,7 @@ use Timber\Post;
 use Timber\Site;
 use Timber\Timber;
 use Timber\Menu;
+use Timber\Image;
 
 
 if ( ! class_exists( 'Timber\Timber' ) ) {
@@ -66,9 +67,6 @@ class StarterSite extends Site {
 	 * @param string $context context['this'] Being the Twig's {{ this }}.
 	 */
 	public function add_to_context( $context ) {
-		$context['foo'] = 'bar';
-		$context['stuff'] = 'I am a value set in your functions.php file';
-		$context['notes'] = 'These values are available everytime you call Timber::get_context();';
 		$context['menu'] = new Menu();
 		$context['site'] = $this;
 		return $context;
@@ -126,22 +124,12 @@ class StarterSite extends Site {
 		add_theme_support( 'menus' );
 	}
 
-	/** This Would return 'foo bar!'.
-	 *
-	 * @param string $text being 'foo', then returned 'foo bar!'.
-	 */
-	public function myfoo( $text ) {
-		$text .= ' bar!';
-		return $text;
-	}
-
 	/** This is where you can add your own functions to twig.
 	 *
 	 * @param string $twig get extension.
 	 */
 	public function add_to_twig( $twig ) {
 		$twig->addExtension( new Twig_Extension_StringLoader() );
-		$twig->addFilter( new Twig_SimpleFilter( 'myfoo', array( $this, 'myfoo' ) ) );
 		return $twig;
 	}
 
