@@ -1,0 +1,14 @@
+/* TEAM */
+Your title: 
+Site: 
+Twitter: 
+Location: 
+
+/* THANKS */
+Name: 
+
+/* SITE */
+Last update: 
+Standards: 
+Components: 
+Software: 
