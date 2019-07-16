@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Search results page
  *
@@ -12,10 +13,10 @@
 use Timber\Timber;
 use Timber\PostQuery;
 
-$templates = array( 'search.twig', 'archive.twig', 'index.twig' );
+$templates = array('search.twig', 'archive.twig', 'index.twig');
 
 $context          = Timber::get_context();
 $context['title'] = 'Search results for ' . get_search_query();
-$context['posts'] = new Timber\PostQuery();
+$context['posts'] = new PostQuery();
 
-Timber::render( $templates, $context );
+Timber::render($templates, $context);
