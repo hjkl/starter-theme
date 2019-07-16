@@ -13,6 +13,8 @@ class Site extends BaseSite
         add_filter('get_twig', array($this, 'add_to_twig'));
         add_action('init', array($this, 'register_post_types'));
         add_action('init', array($this, 'register_taxonomies'));
+        add_action('init', array($this, 'register_taxonomies'));
+        add_action('wp_enqueue_scripts', array($this, 'enqueue_assets'));
         parent::__construct();
     }
 
@@ -23,6 +25,14 @@ class Site extends BaseSite
     /** This is where you can register custom taxonomies. */
     public function register_taxonomies()
     { }
+
+    /** Enqueue assets */
+    public function enqueue_assets()
+    {
+        wp_enqueue_style('app', get_theme_file_uri('build/app.css'));
+        wp_enqueue_script('webpack-runtime', get_theme_file_uri('build/runtime.js'), null, null, true);
+        wp_enqueue_script('app', get_theme_file_uri('build/app.js'), null, null, true);
+    }
 
     /** This is where you add some context
      *
