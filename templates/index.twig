@@ -1,9 +1,21 @@
 {% extends "layout.twig" %}
 
 {% block main %}
-	{% for post in posts %}
-		{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
-	{% endfor %}
-	
-	{% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+	<div class="index">
+		{% block index__title %}
+			{% if title is defined and title %}
+				<h1 class="index__title">{{ title }}</h1>
+			{% endif %}
+		{% endblock %}
+
+		<div class="index__teases">
+			{% block index__teases %}
+				{% for post in posts %}
+					{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+				{% endfor %}
+			{% endblock %}
+		</div>
+
+		{% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+	</div>
 {% endblock %}

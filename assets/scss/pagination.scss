@@ -1,0 +1,23 @@
+.pagination {
+  &__item {
+    &--first {
+    }
+
+    &--prev {
+    }
+
+    &--current {
+    }
+
+    &--next {
+    }
+
+    &--last {
+    }
+  }
+
+  &__link {
+    &--disabled {
+    }
+  }
+}

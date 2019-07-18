@@ -3,7 +3,7 @@
 {% block body %}
     <a href="{{ site.url }}" rel="home">{{ site.name }}</a>
     <nav aria-label="Main navigation" role="navigation">
-        {% include "menu.twig" with {'menu': menu.get_items} only %}
+        {% include "partial/menu.twig" with {'menu': menu.get_items} only %}
     </nav>
     <main role="main">
         {% block main %}{% endblock %}

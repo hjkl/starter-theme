@@ -1,0 +1,5 @@
+<form action="{{ site.url }}" method="GET" class="form search-form">
+    <label for="search-form-input" class="form__label search-form__label">Search for</label>
+    <input type="text" name="s" id="search-form-input" value="{{ function('get_search_query') }}">
+    <button type="submit" class="form__btn search-form__btn">Search</button>
+</form>
