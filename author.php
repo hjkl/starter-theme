@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying Author Archive pages
  *
@@ -10,15 +11,7 @@
  */
 
 use Timber\Timber;
-use Timber\PostQuery;
 
-global $wp_query;
-
-$context          = Timber::get_context();
-$context['posts'] = new PostQuery();
-if ( isset( $wp_query->query_vars['author'] ) ) {
-	$author            = new Timber\User( $wp_query->query_vars['author'] );
-	$context['author'] = $author;
-	$context['title']  = 'Author Archives: ' . $author->name();
-}
-Timber::render( array( 'author.twig', 'archive.twig' ), $context );
+status_header(404);
+$context = Timber::get_context();
+Timber::render(array('404.twig'), $context);

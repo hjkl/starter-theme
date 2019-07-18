@@ -16,16 +16,8 @@
     </head>
 
     <body class="{{ body_class }}">
-		<a href="{{ site.url }}" rel="home">{{ site.name }}</a>
-		<nav role="navigation" aria-label="Main navigation">
-			{% include "menu.twig" with {'menu': menu.get_items} only %}
-		</nav>
-        <main role="main">
-			{% block content %}
-			{% endblock %}
-		</main>
-		<footer>
-		</footer>
+		{% block body %}
+		{% endblock %}
 		{{ function('wp_footer') }}
     </body>
 </html>

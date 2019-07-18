@@ -1,6 +1,6 @@
-{% extends "base.twig" %}
+{% extends "layout.twig" %}
 
-{% block content %}
+{% block main %}
 	{% for post in posts %}
 		{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
 	{% endfor %}
